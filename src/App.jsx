@@ -1,19 +1,19 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import AllEmployees from "./pages/AllEmployees";
+import AddEmployee from "./pages/AddEmployee";
 
 function App() {
   return (
     <>
-      <Header />
-      <AllEmployees />
-      {/* <BrowserRouter>
+      <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/" element={}>
-
-          </Route>
+          <Route path="/" element={<AllEmployees />} />
+          <Route path="/add-employee/" element={<AddEmployee />} />
+          <Route path="/edit-employee/:id" element={<AddEmployee />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   );
 }
